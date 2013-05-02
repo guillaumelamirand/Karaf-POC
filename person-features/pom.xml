@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.bull.examples.karaf</groupId>
+		<artifactId>karaf-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>person-features</artifactId>
+    <packaging>pom</packaging>
+	<name>Examples :: Karaf :: Features</name>
+	<description>Examples :: Karaf :: Features</description>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <executions>
+             <execution>
+                <id>filter</id>
+                <phase>generate-resources</phase>
+                <goals>
+                  <goal>resources</goal>
+                </goals>
+             </execution>
+          </executions>
+        </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-artifacts</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>target/classes/features.xml</file>
+                                    <type>xml</type>
+                                </artifact>
+                                <artifact>
+                                    <file>target/classes/org.bull.examples.karaf.person.datasource.cfg</file>
+                                    <type>cfg</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>	<plugin>
+	<groupId>org.apache.karaf.tooling</groupId>
+	<artifactId>karaf-maven-plugin</artifactId>
+	<version>${karaf.version}</version>
+	<executions>
+		<execution>
+			<id>create-kar</id>
+			<goals>
+				<goal>features-create-kar</goal>
+			</goals>
+			<configuration>
+				<featuresFile>${project.basedir}/target/classes/features.xml</featuresFile>
+			</configuration>
+		</execution>
+	</executions>
+</plugin>
+        </plugins>
+    </build>
+
+</project>

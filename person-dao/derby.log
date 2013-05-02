@@ -1,0 +1,10 @@
+----------------------------------------------------------------
+Thu May 02 23:17:22 CEST 2013:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.8.2.2 - (1181258): instance a816c00e-013e-671b-4c89-000001f31f50 
+on database directory /home/lamirand-g/Work/Projects/github/Karaf-POC/person-dao/target/test  with class loader sun.misc.Launcher$AppClassLoader@1372a1a 
+Loaded from file:/home/lamirand-g/Work/Datas/Repository/org/apache/derby/derby/10.8.2.2/derby-10.8.2.2.jar
+java.vendor=Sun Microsystems Inc.
+java.runtime.version=1.6.0_41-b02
+user.dir=/home/lamirand-g/Work/Projects/github/Karaf-POC/person-dao
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

@@ -1,0 +1,5 @@
+<personDTO xmlns:ns2="http://model.person.karaf.sandboxes.novaforge.org">
+<login>user-1</login>
+<email>user.1@bull.net</email>
+<name>User 1</name>
+</personDTO>
