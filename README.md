@@ -11,16 +11,16 @@ mvn clean install
 
 Install && run :
 
-wget http://www.apache.org/dyn/closer.cgi/karaf/2.2.10/apache-karaf-2.2.10.tar.gz
-tar xvf apache-karaf-2.2.10.tar.gz
-cd apache-karaf-2.2.10
-./bin/karaf
+  - wget http://www.apache.org/dyn/closer.cgi/karaf/2.2.10/apache-karaf-2.2.10.tar.gz
+  - tar xvf apache-karaf-2.2.10.tar.gz
+  - cd apache-karaf-2.2.10
+  - ./bin/karaf
 
-features:addurl mvn:org.apache.cxf.karaf/apache-cxf/2.7.3/xml/features
-features:addurl mvn:org.novaforge.sandboxes.karaf/person-features/1.0.0-SNAPSHOT/xml
-features:addUrl mvn:org.apache.camel.karaf/apache-camel/2.10.4/xml/features
+  - features:addurl mvn:org.apache.cxf.karaf/apache-cxf/2.7.3/xml/features
+  - features:addurl mvn:org.novaforge.sandboxes.karaf/person-features/1.0.0-SNAPSHOT/xml
+  - features:addUrl mvn:org.apache.camel.karaf/apache-camel/2.10.4/xml/features
 
-features:install person-service
+  - features:install person-service
 
 
 Test the felix command for datasource
@@ -33,7 +33,7 @@ Test the felix command for datasource
 Test the felix command for person dao
 =========
 
-> person:add lamirand-g 'Guillaume Lamirand' guillaume.lamirand@bull.net
+> person:add lamirand-g 'Guillaume Lamirand' guillaume.lamirand@email.net
 
 > person:list
 
